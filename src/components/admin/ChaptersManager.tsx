@@ -116,7 +116,10 @@ const ChaptersManager = () => {
             <CardTitle>Chapters Management</CardTitle>
             <CardDescription>Create and manage chapters</CardDescription>
           </div>
-          <Dialog open={isDialogOpen} onOpenChange={handleDialogClose}>
+          <Dialog open={isDialogOpen} onOpenChange={(open) => {
+            if (!open) handleDialogClose();
+            else setIsDialogOpen(true);
+          }}>
             <DialogTrigger asChild>
               <Button className="gap-2" disabled={subjects.length === 0}>
                 <Plus className="h-4 w-4" />

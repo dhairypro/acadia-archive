@@ -116,7 +116,10 @@ const SubjectsManager = () => {
             <CardTitle>Subjects Management</CardTitle>
             <CardDescription>Create and manage subjects</CardDescription>
           </div>
-          <Dialog open={isDialogOpen} onOpenChange={handleDialogClose}>
+          <Dialog open={isDialogOpen} onOpenChange={(open) => {
+            if (!open) handleDialogClose();
+            else setIsDialogOpen(true);
+          }}>
             <DialogTrigger asChild>
               <Button className="gap-2" disabled={classes.length === 0}>
                 <Plus className="h-4 w-4" />
