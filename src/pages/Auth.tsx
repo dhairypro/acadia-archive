@@ -42,8 +42,10 @@ const Auth = () => {
       });
 
       if (error) throw error;
-      toast.success('Account created! Please check your email to verify.');
-      navigate('/dashboard');
+      toast.success('Account created successfully! You can now sign in.');
+      // Auto-switch to signin tab after successful signup
+      const signInTab = document.querySelector('[value="signin"]') as HTMLElement;
+      signInTab?.click();
     } catch (error: any) {
       toast.error(error.message || 'Error signing up');
     } finally {
