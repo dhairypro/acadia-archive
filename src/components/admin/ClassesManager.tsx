@@ -114,7 +114,10 @@ const ClassesManager = () => {
             <CardTitle>Classes Management</CardTitle>
             <CardDescription>Create and manage classes</CardDescription>
           </div>
-          <Dialog open={isDialogOpen} onOpenChange={handleDialogClose}>
+          <Dialog open={isDialogOpen} onOpenChange={(open) => {
+            if (open) setIsDialogOpen(true);
+            else handleDialogClose();
+          }}>
             <DialogTrigger asChild>
               <Button className="gap-2">
                 <Plus className="h-4 w-4" />

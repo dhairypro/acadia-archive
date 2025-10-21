@@ -8,80 +8,82 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 42 48% 91%;
-    --foreground: 11 49% 17%;
+    --background: 0 0% 100%;
+    --foreground: 280 10% 10%;
 
-    --card: 40 45% 96%;
-    --card-foreground: 11 49% 17%;
+    --card: 0 0% 100%;
+    --card-foreground: 280 10% 10%;
 
-    --popover: 40 45% 96%;
-    --popover-foreground: 11 49% 17%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 280 10% 10%;
 
-    --primary: 11 49% 17%;
-    --primary-foreground: 42 48% 91%;
+    --primary: 270 60% 50%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 25 45% 35%;
-    --secondary-foreground: 42 48% 91%;
+    --secondary: 280 50% 70%;
+    --secondary-foreground: 280 10% 10%;
 
-    --muted: 40 35% 85%;
-    --muted-foreground: 11 30% 40%;
+    --muted: 270 20% 96%;
+    --muted-foreground: 280 10% 45%;
 
-    --accent: 20 55% 45%;
-    --accent-foreground: 42 48% 91%;
+    --accent: 280 60% 90%;
+    --accent-foreground: 270 60% 30%;
 
     --destructive: 0 70% 55%;
-    --destructive-foreground: 42 48% 91%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 40 30% 80%;
-    --input: 40 30% 80%;
-    --ring: 11 49% 17%;
+    --border: 280 20% 90%;
+    --input: 280 20% 90%;
+    --ring: 270 60% 50%;
 
     --radius: 0.75rem;
 
-    --gradient-primary: linear-gradient(135deg, hsl(11, 49%, 17%), hsl(11, 40%, 25%));
-    --gradient-hero: linear-gradient(135deg, hsl(11, 49%, 17%), hsl(20, 45%, 30%));
-    --gradient-success: linear-gradient(135deg, hsl(25, 45%, 35%), hsl(20, 50%, 40%));
+    --gradient-primary: linear-gradient(135deg, hsl(270, 60%, 50%), hsl(280, 70%, 60%));
+    --gradient-hero: linear-gradient(135deg, hsl(270, 60%, 50%), hsl(280, 50%, 70%));
+    --gradient-success: linear-gradient(135deg, hsl(280, 50%, 70%), hsl(280, 60%, 80%));
     
-    --shadow-card: 0 2px 8px hsl(11 49% 17% / 0.08);
-    --shadow-hover: 0 8px 24px hsl(11 49% 17% / 0.12);
+    --shadow-card: 0 2px 8px hsl(270 60% 50% / 0.1);
+    --shadow-hover: 0 8px 24px hsl(270 60% 50% / 0.2);
+    --shadow-glow: 0 0 40px hsl(270 60% 50% / 0.3);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .dark {
-    --background: 11 49% 10%;
-    --foreground: 42 48% 91%;
+    --background: 270 40% 8%;
+    --foreground: 0 0% 98%;
 
-    --card: 11 45% 14%;
-    --card-foreground: 42 48% 91%;
+    --card: 270 30% 12%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 11 45% 14%;
-    --popover-foreground: 42 48% 91%;
+    --popover: 270 30% 12%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 42 48% 91%;
-    --primary-foreground: 11 49% 17%;
+    --primary: 270 60% 60%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 25 45% 55%;
-    --secondary-foreground: 11 49% 17%;
+    --secondary: 280 40% 25%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 11 35% 20%;
-    --muted-foreground: 42 30% 70%;
+    --muted: 270 30% 18%;
+    --muted-foreground: 280 10% 65%;
 
-    --accent: 20 55% 55%;
-    --accent-foreground: 11 49% 17%;
+    --accent: 270 50% 20%;
+    --accent-foreground: 0 0% 98%;
 
     --destructive: 0 65% 50%;
-    --destructive-foreground: 42 48% 91%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 11 30% 25%;
-    --input: 11 30% 25%;
-    --ring: 42 48% 91%;
+    --border: 270 30% 20%;
+    --input: 270 30% 20%;
+    --ring: 270 60% 60%;
     
-    --gradient-primary: linear-gradient(135deg, hsl(42, 48%, 91%), hsl(40, 40%, 80%));
-    --gradient-hero: linear-gradient(135deg, hsl(42, 48%, 91%), hsl(35, 45%, 75%));
-    --gradient-success: linear-gradient(135deg, hsl(25, 45%, 55%), hsl(20, 50%, 60%));
+    --gradient-primary: linear-gradient(135deg, hsl(270, 60%, 60%), hsl(280, 70%, 70%));
+    --gradient-hero: linear-gradient(135deg, hsl(270, 60%, 60%), hsl(280, 50%, 80%));
+    --gradient-success: linear-gradient(135deg, hsl(280, 50%, 80%), hsl(280, 60%, 90%));
     
     --shadow-card: 0 2px 8px hsl(0 0% 0% / 0.3);
     --shadow-hover: 0 8px 24px hsl(0 0% 0% / 0.4);
+    --shadow-glow: 0 0 40px hsl(270 60% 60% / 0.4);
   }
 }
 
