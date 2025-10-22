@@ -4,7 +4,7 @@ import { useAuth } from '@/contexts/AuthContext';
 import { supabase } from '@/integrations/supabase/client';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { BookOpen, LogOut, Shield } from 'lucide-react';
+import { BookOpen, LogOut, Shield, Calendar, Trophy, ClipboardList } from 'lucide-react';
 import { Database } from '@/types/database';
 
 type Class = Database['public']['Tables']['classes']['Row'];
@@ -84,7 +84,60 @@ const Dashboard = () => {
 
       <main className="container mx-auto px-4 py-8">
         <div className="mb-8">
-          <h2 className="text-3xl font-bold mb-2">Browse Study Materials</h2>
+          <h2 className="text-3xl font-bold mb-2">Dashboard</h2>
+          <p className="text-muted-foreground">Access your classes and features</p>
+        </div>
+
+        {/* Quick Access Cards */}
+        <div className="grid md:grid-cols-3 gap-6 mb-8">
+          <Card 
+            className="p-6 bg-white/50 dark:bg-purple-900/20 backdrop-blur-xl border-purple-200 dark:border-purple-800 hover:shadow-xl transition-all duration-300 cursor-pointer hover:-translate-y-1"
+            onClick={() => navigate('/attendance')}
+          >
+            <div className="flex items-center gap-4">
+              <div className="p-3 bg-gradient-to-br from-green-500 to-green-600 rounded-lg">
+                <Calendar className="h-6 w-6 text-white" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-gray-900 dark:text-white">Attendance</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400">Track your presence</p>
+              </div>
+            </div>
+          </Card>
+
+          <Card 
+            className="p-6 bg-white/50 dark:bg-purple-900/20 backdrop-blur-xl border-purple-200 dark:border-purple-800 hover:shadow-xl transition-all duration-300 cursor-pointer hover:-translate-y-1"
+            onClick={() => navigate('/quiz')}
+          >
+            <div className="flex items-center gap-4">
+              <div className="p-3 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg">
+                <ClipboardList className="h-6 w-6 text-white" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-gray-900 dark:text-white">Quizzes</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400">Test your knowledge</p>
+              </div>
+            </div>
+          </Card>
+
+          <Card 
+            className="p-6 bg-white/50 dark:bg-purple-900/20 backdrop-blur-xl border-purple-200 dark:border-purple-800 hover:shadow-xl transition-all duration-300 cursor-pointer hover:-translate-y-1"
+            onClick={() => navigate('/leaderboard')}
+          >
+            <div className="flex items-center gap-4">
+              <div className="p-3 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-lg">
+                <Trophy className="h-6 w-6 text-white" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-gray-900 dark:text-white">Leaderboard</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400">See your ranking</p>
+              </div>
+            </div>
+          </Card>
+        </div>
+
+        <div className="mb-6">
+          <h3 className="text-2xl font-bold mb-2">Browse Study Materials</h3>
           <p className="text-muted-foreground">Select a class to access subjects and chapters</p>
         </div>
 

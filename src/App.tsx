@@ -11,7 +11,11 @@ import ClassView from "./pages/ClassView";
 import SubjectView from "./pages/SubjectView";
 import ChapterView from "./pages/ChapterView";
 import Admin from "./pages/Admin";
+import Attendance from "./pages/Attendance";
+import Quiz from "./pages/Quiz";
+import Leaderboard from "./pages/Leaderboard";
 import NotFound from "./pages/NotFound";
+import AIChatbot from "./components/AIChatbot";
 
 const queryClient = new QueryClient();
 
@@ -30,8 +34,12 @@ const App = () => (
             <Route path="/subject/:subjectId" element={<SubjectView />} />
             <Route path="/chapter/:chapterId" element={<ChapterView />} />
             <Route path="/admin" element={<Admin />} />
+            <Route path="/attendance" element={<Attendance />} />
+            <Route path="/quiz" element={<Quiz />} />
+            <Route path="/leaderboard" element={<Leaderboard />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
+          <AIChatbot />
         </AuthProvider>
       </BrowserRouter>
     </TooltipProvider>

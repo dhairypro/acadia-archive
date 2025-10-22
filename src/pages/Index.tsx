@@ -4,7 +4,7 @@ import { BookOpen, ArrowRight, GraduationCap, Users, BookMarked, Award, Target, 
 import MouseGlow from '@/components/MouseGlow';
 import TypingEffect from '@/components/TypingEffect';
 import waveImage from '@/assets/wave.svg';
-import studentImage from '@/assets/student.jpg';
+import studentImage from '@/assets/student.png';
 
 const Index = () => {
   const navigate = useNavigate();
@@ -85,19 +85,6 @@ const Index = () => {
             </div>
           </div>
         </div>
-        
-        {/* Wave decoration at bottom */}
-        <div className="absolute bottom-0 left-0 right-0 h-48 overflow-hidden opacity-80">
-          <img 
-            src={waveImage} 
-            alt="" 
-            className="w-full h-full object-cover"
-            style={{ 
-              filter: 'hue-rotate(0deg) saturate(1.5)',
-              animation: 'wave 20s ease-in-out infinite' 
-            }}
-          />
-        </div>
       </section>
 
       {/* Courses Section */}
@@ -166,20 +153,6 @@ const Index = () => {
             ))}
           </div>
         </div>
-        
-        {/* Wave decoration */}
-        <div className="absolute bottom-0 left-0 right-0 h-48 overflow-hidden opacity-80">
-          <img 
-            src={waveImage} 
-            alt="" 
-            className="w-full h-full object-cover"
-            style={{ 
-              filter: 'hue-rotate(0deg) saturate(1.5)',
-              transform: 'scaleX(-1)',
-              animation: 'wave 20s ease-in-out infinite' 
-            }}
-          />
-        </div>
       </section>
 
       {/* About Section */}
@@ -225,19 +198,6 @@ const Index = () => {
               </div>
             </div>
           </div>
-        </div>
-        
-        {/* Wave decoration */}
-        <div className="absolute bottom-0 left-0 right-0 h-48 overflow-hidden opacity-80">
-          <img 
-            src={waveImage} 
-            alt="" 
-            className="w-full h-full object-cover"
-            style={{ 
-              filter: 'hue-rotate(0deg) saturate(1.5)',
-              animation: 'wave 20s ease-in-out infinite' 
-            }}
-          />
         </div>
       </section>
 
@@ -291,20 +251,6 @@ const Index = () => {
               </div>
             ))}
           </div>
-        </div>
-        
-        {/* Wave decoration */}
-        <div className="absolute bottom-0 left-0 right-0 h-48 overflow-hidden opacity-80">
-          <img 
-            src={waveImage} 
-            alt="" 
-            className="w-full h-full object-cover"
-            style={{ 
-              filter: 'hue-rotate(0deg) saturate(1.5)',
-              transform: 'scaleX(-1)',
-              animation: 'wave 20s ease-in-out infinite' 
-            }}
-          />
         </div>
       </section>
 
