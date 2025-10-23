@@ -11,8 +11,9 @@ import ClassView from "./pages/ClassView";
 import SubjectView from "./pages/SubjectView";
 import ChapterView from "./pages/ChapterView";
 import Admin from "./pages/Admin";
+import StudentDetail from "./pages/StudentDetail";
 import Attendance from "./pages/Attendance";
-import Quiz from "./pages/Quiz";
+import MarksTracker from "./pages/MarksTracker";
 import Leaderboard from "./pages/Leaderboard";
 import NotFound from "./pages/NotFound";
 import AIChatbot from "./components/AIChatbot";
@@ -34,8 +35,9 @@ const App = () => (
             <Route path="/subject/:subjectId" element={<SubjectView />} />
             <Route path="/chapter/:chapterId" element={<ChapterView />} />
             <Route path="/admin" element={<Admin />} />
+            <Route path="/student/:studentId" element={<StudentDetail />} />
             <Route path="/attendance" element={<Attendance />} />
-            <Route path="/quiz" element={<Quiz />} />
+            <Route path="/quiz" element={<MarksTracker />} />
             <Route path="/leaderboard" element={<Leaderboard />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

@@ -2,9 +2,10 @@ import { useEffect, useState } from 'react';
 import { useAuth } from '@/contexts/AuthContext';
 import { supabase } from '@/integrations/supabase/client';
 import { Card } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 import { Calendar } from '@/components/ui/calendar';
 import { Badge } from '@/components/ui/badge';
-import { CalendarIcon, CheckCircle, XCircle, Clock } from 'lucide-react';
+import { CalendarIcon, CheckCircle, XCircle, Clock, ArrowLeft } from 'lucide-react';
 import { toast } from 'sonner';
 import { useNavigate } from 'react-router-dom';
 
@@ -109,6 +110,11 @@ const Attendance = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-purple-100 dark:from-purple-950 dark:via-gray-900 dark:to-purple-900 p-6">
       <div className="container mx-auto max-w-6xl">
+        <Button onClick={() => navigate('/dashboard')} variant="outline" className="gap-2 mb-6">
+          <ArrowLeft className="h-4 w-4" />
+          Back to Dashboard
+        </Button>
+        
         <div className="mb-8">
           <h1 className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-purple-800 dark:from-purple-400 dark:to-purple-600 bg-clip-text text-transparent">
             Attendance Tracker

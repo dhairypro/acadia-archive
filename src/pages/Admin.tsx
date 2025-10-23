@@ -8,6 +8,9 @@ import ClassesManager from '@/components/admin/ClassesManager';
 import SubjectsManager from '@/components/admin/SubjectsManager';
 import ChaptersManager from '@/components/admin/ChaptersManager';
 import FilesManager from '@/components/admin/FilesManager';
+import StudentsManager from '@/components/admin/StudentsManager';
+import AttendanceMarking from '@/components/admin/AttendanceMarking';
+import ExamsManager from '@/components/admin/ExamsManager';
 
 const Admin = () => {
   const { user, isAdmin, loading } = useAuth();
@@ -53,13 +56,25 @@ const Admin = () => {
           </Button>
         </div>
 
-        <Tabs defaultValue="classes" className="w-full">
-          <TabsList className="grid w-full grid-cols-4">
+        <Tabs defaultValue="students" className="w-full">
+          <TabsList className="grid w-full grid-cols-7 h-auto">
+            <TabsTrigger value="students">Students</TabsTrigger>
+            <TabsTrigger value="attendance">Attendance</TabsTrigger>
+            <TabsTrigger value="exams">Exams</TabsTrigger>
             <TabsTrigger value="classes">Classes</TabsTrigger>
             <TabsTrigger value="subjects">Subjects</TabsTrigger>
             <TabsTrigger value="chapters">Chapters</TabsTrigger>
             <TabsTrigger value="files">Files</TabsTrigger>
           </TabsList>
+          <TabsContent value="students" className="mt-6">
+            <StudentsManager />
+          </TabsContent>
+          <TabsContent value="attendance" className="mt-6">
+            <AttendanceMarking />
+          </TabsContent>
+          <TabsContent value="exams" className="mt-6">
+            <ExamsManager />
+          </TabsContent>
           <TabsContent value="classes" className="mt-6">
             <ClassesManager />
           </TabsContent>
