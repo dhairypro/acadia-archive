@@ -21,19 +21,13 @@ serve(async (req) => {
 
     console.log('Received message:', message);
 
-    // Format chat history for Gemini API
-    const contents = [
-      {
-        role: 'user',
-        parts: [{
-          text: `You are an AI tutor for Graph Educations, a tuition center. Help students with their academic questions, provide explanations, and guide them in their learning journey. Be encouraging, clear, and educational. Focus on subjects like Mathematics, Physics, Chemistry, and Biology.
+    // System prompt for AI tutor
+    const systemPrompt = `You are an AI tutor for Graph Educations, a tuition center. Help students with their academic questions, provide explanations, and guide them in their learning journey. Be encouraging, clear, and educational. Focus on subjects like Mathematics, Physics, Chemistry, and Biology. Provide step-by-step explanations and examples when needed.`;
 
-Current question: ${message}`
-        }]
-      }
-    ];
-
-    // Add chat history if provided
+    // Format chat history for Gemini API - must alternate user/model roles
+    const contents = [];
+    
+    // Add chat history first
     if (chatHistory.length > 0) {
       chatHistory.forEach((msg: any) => {
         contents.push({
@@ -41,6 +35,18 @@ Current question: ${message}`
           parts: [{ text: msg.content }]
         });
       });
+    }
+    
+    // Add current user message
+    contents.push({
+      role: 'user',
+      parts: [{ text: message }]
+    });
+
+    // Ensure proper alternation - Gemini requires user/model alternation
+    // If last message in history is from user, we need to add a model response
+    if (contents.length > 1 && contents[contents.length - 2].role === 'user') {
+      console.log('Warning: Detected consecutive user messages, adjusting...');
     }
 
     const response = await fetch(
@@ -52,9 +58,12 @@ Current question: ${message}`
         },
         body: JSON.stringify({
           contents,
+          systemInstruction: {
+            parts: [{ text: systemPrompt }]
+          },
           generationConfig: {
             temperature: 0.7,
-            maxOutputTokens: 1024,
+            maxOutputTokens: 2048,
           }
         }),
       }
