@@ -107,15 +107,15 @@ const Dashboard = () => {
 
           <Card 
             className="p-6 bg-white/50 dark:bg-purple-900/20 backdrop-blur-xl border-purple-200 dark:border-purple-800 hover:shadow-xl transition-all duration-300 cursor-pointer hover:-translate-y-1"
-            onClick={() => navigate('/quiz')}
+            onClick={() => navigate('/marks-tracker')}
           >
             <div className="flex items-center gap-4">
               <div className="p-3 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg">
                 <ClipboardList className="h-6 w-6 text-white" />
               </div>
               <div>
-                <h3 className="font-semibold text-gray-900 dark:text-white">Quizzes</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400">Test your knowledge</p>
+                <h3 className="font-semibold text-gray-900 dark:text-white">Marks Tracker</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400">View your performance</p>
               </div>
             </div>
           </Card>
